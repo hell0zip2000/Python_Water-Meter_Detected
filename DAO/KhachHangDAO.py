@@ -10,16 +10,16 @@ class KhachHangDAO:
     def get_all(self):
         listKH = []
         """Lấy thông tin user theo ID"""
-        self.cursor.execute("SELECT * FROM taikhoan")
+        self.cursor.execute("SELECT * FROM khachhang")
         rows = self.cursor.fetchall()
         for row in rows:
             user_dto = KhachHangDTO(row[0], row[1], row[2], row[3], row[4])  # Truyền đúng thứ tự
             listKH.append(user_dto)  # Thêm vào danh sách
         return listKH
 
-    def get_user(self, KHID):
+    def get_user(self, MaKhachHang):
         """Lấy thông tin user theo ID"""
-        self.cursor.execute("SELECT * FROM taikhoan WHERE id = %s", (KHID,))
+        self.cursor.execute("SELECT * FROM khachhang WHERE id = %s", (MaKhachHang,))
         row = self.cursor.fetchone()
         if row:
             return KhachHangDTO(row[0], row[1], row[2], row[3], row[4])  # Trả về đối tượng DTO
@@ -27,10 +27,14 @@ class KhachHangDAO:
 
     def insert_user(self, HoTen, Email):
         """Thêm user mới"""
-        sql = "INSERT INTO users (HoTen, Email) VALUES (%s, %s)"
-        self.cursor.execute(sql, (HoTen, Email))
+        self.cursor.execute("SELECT MAX(MaKhachHang) FROM khachhang")
+        max_id = self.cursor.fetchone()[0]
+        new_id = max_id + 1 if max_id is not None else 1
+
+        sql = "INSERT INTO khachhang (MaKhachHang, HoTen, Email) VALUES (%s, %s, %s)"
+        self.cursor.execute(sql, (new_id, HoTen, Email))
         self.conn.commit()
-        return self.cursor.lastrowid
+        return new_id
 
     def close(self):
         self.conn.close()
