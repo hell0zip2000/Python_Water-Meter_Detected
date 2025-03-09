@@ -6,3 +6,5 @@ class KhachHangDTO:
         self.DiaChi = DiaChi
         self.SoDienThoai = SoDienThoai
         self.Email = Email
+    def __str__(self):
+        return f"{self.MaKhachHang} - {self.HoTen} - {self.DiaChi} - {self.SoDienThoai} - {self.Email}"

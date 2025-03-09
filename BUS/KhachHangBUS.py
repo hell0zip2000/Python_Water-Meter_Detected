@@ -4,20 +4,20 @@ from DTO.KhachHangDTO import KhachHangDTO
 import re
 class KhachHangBUS:
     def __init__(self):
-        self.KhachHangDAO = KhachHangDAO()
-
+        self.DAO = KhachHangDAO()
+    def get_user(self, MaKhachHang): 
+        return self.DAO.get_user(MaKhachHang)
     def get_all(self):
         """Lấy danh sách khách hàng từ DAO"""
-        return self.KhachHangDAO.get_all()
+        return self.DAO.get_all()
 
-    def insert_user(self, HoTen, Email):
+    def insert_user(self, HoTen, DiaChi, SoDienThoai, Email):
         # Example validation: check if email is in valid format
-        if not re.match(r"[^@]+@[^@]+\.[^@]+", Email):
+        if not re.match(r"[^@]+@[^@]+\.[^@]+", Email): #[^@]+ means "one or more characters that are not @(john,nguyen,gmail,com)" && \. means a literal dot. && @ means a literal @
             raise ValueError("Invalid email format")
-
         # Additional validations can go here:
         # If validation passes, proceed to insert the user
-        new_user_id = self.KhachHangDAO.insert_user(HoTen, Email)
+        new_user_id = self.KhachHangDAO.insert_user(HoTen, DiaChi, SoDienThoai, Email)
         return new_user_id
     def close(self):
-        self.KhachHangDAO.close()
+        self.DAO.close()
