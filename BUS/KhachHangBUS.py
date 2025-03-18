@@ -11,12 +11,9 @@ class KhachHangBUS:
         return self.KhachHangDAO.get_all()
 
     def insert_user(self, HoTen, Email):
-        # Example validation: check if email is in valid format
         if not re.match(r"[^@]+@[^@]+\.[^@]+", Email):
             raise ValueError("Invalid email format")
 
-        # Additional validations can go here:
-        # If validation passes, proceed to insert the user
         new_user_id = self.KhachHangDAO.insert_user(HoTen, Email)
         return new_user_id
     def close(self):

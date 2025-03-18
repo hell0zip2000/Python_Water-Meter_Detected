@@ -8,11 +8,3 @@ from PyQt6.QtWidgets import QApplication, QMainWindow, QMenuBar, QMenu, QMessage
 from PyQt6.QtGui import QAction
 from PyQt6 import uic
 from PyQt6.QtCore import QDate
-import sys
-from PyQt6.QtWidgets import QApplication
-from GUI.Login_Gui import Login_w  
-
-app = QApplication(sys.argv)
-login_f = Login_w()
-login_f.show()  
-sys.exit(app.exec())
