@@ -160,26 +160,11 @@
       <string>Tên nhân viên</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="address">
-     <property name="geometry">
-      <rect>
-       <x>180</x>
-       <y>190</y>
-       <width>191</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>10</pointsize>
-      </font>
-     </property>
-    </widget>
     <widget class="QLabel" name="label_3">
      <property name="geometry">
       <rect>
        <x>30</x>
-       <y>190</y>
+       <y>270</y>
        <width>141</width>
        <height>31</height>
       </rect>
@@ -190,10 +175,10 @@
       </font>
      </property>
      <property name="text">
-      <string>Địa chỉ</string>
+      <string>Chức vụ</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="phone">
+    <widget class="QLineEdit" name="password">
      <property name="geometry">
       <rect>
        <x>180</x>
@@ -223,7 +208,7 @@
       </font>
      </property>
      <property name="text">
-      <string>Số điện thoại</string>
+      <string>Mật khẩu</string>
      </property>
     </widget>
     <widget class="QPushButton" name="btnReset">
@@ -330,17 +315,17 @@
      </column>
      <column>
       <property name="text">
-       <string>Địa chỉ</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>Số điện thoại</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
        <string>Email</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Mật khẩu</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Chức vụ</string>
       </property>
      </column>
      <column>
@@ -353,7 +338,7 @@
      <property name="geometry">
       <rect>
        <x>180</x>
-       <y>270</y>
+       <y>190</y>
        <width>191</width>
        <height>31</height>
       </rect>
@@ -368,7 +353,7 @@
      <property name="geometry">
       <rect>
        <x>30</x>
-       <y>270</y>
+       <y>190</y>
        <width>141</width>
        <height>31</height>
       </rect>
@@ -414,6 +399,26 @@
        <pointsize>15</pointsize>
       </font>
      </property>
+    </widget>
+    <widget class="QComboBox" name="role">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>270</y>
+       <width>191</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string>ADMIN</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>STAFF</string>
+      </property>
+     </item>
     </widget>
    </widget>
    <widget class="QPushButton" name="btnKH">

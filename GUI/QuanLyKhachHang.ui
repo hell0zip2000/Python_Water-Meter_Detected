@@ -164,7 +164,7 @@
      <property name="geometry">
       <rect>
        <x>180</x>
-       <y>190</y>
+       <y>270</y>
        <width>191</width>
        <height>31</height>
       </rect>
@@ -179,7 +179,7 @@
      <property name="geometry">
       <rect>
        <x>30</x>
-       <y>190</y>
+       <y>270</y>
        <width>141</width>
        <height>31</height>
       </rect>
@@ -348,7 +348,7 @@
      </column>
      <column>
       <property name="text">
-       <string>Địa chỉ</string>
+       <string>Email</string>
       </property>
      </column>
      <column>
@@ -358,7 +358,7 @@
      </column>
      <column>
       <property name="text">
-       <string>Email</string>
+       <string>Địa chỉ</string>
       </property>
      </column>
      <column>
@@ -381,12 +381,15 @@
        <pointsize>15</pointsize>
       </font>
      </property>
+     <property name="currentSection">
+      <enum>QDateTimeEdit::DaySection</enum>
+     </property>
     </widget>
     <widget class="QLineEdit" name="email">
      <property name="geometry">
       <rect>
        <x>180</x>
-       <y>270</y>
+       <y>190</y>
        <width>191</width>
        <height>31</height>
       </rect>
@@ -401,7 +404,7 @@
      <property name="geometry">
       <rect>
        <x>30</x>
-       <y>270</y>
+       <y>190</y>
        <width>141</width>
        <height>31</height>
       </rect>

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>884</width>
-    <height>584</height>
+    <width>1307</width>
+    <height>619</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -121,7 +121,7 @@
       </font>
      </property>
     </widget>
-    <widget class="QLineEdit" name="tenKH">
+    <widget class="QLineEdit" name="maKH">
      <property name="geometry">
       <rect>
        <x>160</x>
@@ -154,10 +154,10 @@
       </font>
      </property>
      <property name="text">
-      <string>Tên khách hàng</string>
+      <string>Mã khách hàng</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="address">
+    <widget class="QLineEdit" name="maMN">
      <property name="geometry">
       <rect>
        <x>160</x>
@@ -187,10 +187,10 @@
       </font>
      </property>
      <property name="text">
-      <string>Địa chỉ</string>
+      <string>Mã máy nước</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="phone">
+    <widget class="QLineEdit" name="MaD">
      <property name="geometry">
       <rect>
        <x>160</x>
@@ -220,7 +220,7 @@
       </font>
      </property>
      <property name="text">
-      <string>Số điện thoại</string>
+      <string>Mã đọc</string>
      </property>
     </widget>
     <widget class="QPushButton" name="btnReset">
@@ -294,6 +294,9 @@
        <pointsize>8</pointsize>
       </font>
      </property>
+     <property name="autoScroll">
+      <bool>true</bool>
+     </property>
      <property name="textElideMode">
       <enum>Qt::ElideRight</enum>
      </property>
@@ -322,42 +325,42 @@
      </column>
      <column>
       <property name="text">
-       <string>Tên khách hàng</string>
+       <string>Mã khách hàng</string>
       </property>
      </column>
      <column>
       <property name="text">
-       <string>Địa chỉ</string>
+       <string>Mã máy nước</string>
       </property>
      </column>
      <column>
       <property name="text">
-       <string>Số điện thoại</string>
+       <string>Mã đọc</string>
       </property>
      </column>
      <column>
       <property name="text">
-       <string>Chỉ số cũ</string>
+       <string>Số tiền</string>
       </property>
      </column>
      <column>
       <property name="text">
-       <string>Chỉ số mới</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>Tiền nước</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>Tổng tiền</string>
+       <string>Thời hạn</string>
       </property>
      </column>
      <column>
       <property name="text">
        <string>Trạng thái</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Ngày tạo</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Người tạo</string>
       </property>
      </column>
     </widget>
@@ -391,7 +394,7 @@
       </font>
      </property>
      <property name="text">
-      <string>Chỉ số cũ</string>
+      <string>Chỉ số</string>
      </property>
     </widget>
     <widget class="QLineEdit" name="newMeter">
@@ -427,7 +430,115 @@
       </font>
      </property>
      <property name="text">
-      <string>Chỉ số mới</string>
+      <string>Thời hạn</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="newMeter_2">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>350</y>
+       <width>191</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_9">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>350</y>
+       <width>141</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Trạng thái</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="newMeter_3">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>390</y>
+       <width>191</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_10">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>390</y>
+       <width>141</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Ngày tạo</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="newMeter_4">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>430</y>
+       <width>191</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_11">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>430</y>
+       <width>141</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Người tạo</string>
      </property>
     </widget>
    </widget>
@@ -488,7 +599,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>884</width>
+     <width>1307</width>
      <height>22</height>
     </rect>
    </property>
