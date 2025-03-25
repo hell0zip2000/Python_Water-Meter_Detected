@@ -1,18 +1,10 @@
-import sys
-from PyQt6.QtWidgets import QApplication, QStackedWidget
-from GUI.main_GUI import main_GUI  
-from GUI.Login_Gui import Login_w 
-import os
-from PyQt6 import QtWidgets  
-from PyQt6.QtWidgets import QApplication, QMainWindow, QMenuBar, QMenu, QMessageBox, QTableWidget, QTableWidgetItem, QLineEdit
-from PyQt6.QtGui import QAction
-from PyQt6 import uic
-from PyQt6.QtCore import QDate
-import sys
 from PyQt6.QtWidgets import QApplication
-from GUI.Login_Gui import Login_w  
+import sys
+from GUI.ClassUI import MyApp
+if __name__ == "__main__":  #test ground
+    app = QApplication(sys.argv)
+    window = MyApp()  # Start with the login window
+    window.show()
+    sys.exit(app.exec())
 
-app = QApplication(sys.argv)
-login_f = Login_w()
-login_f.show()  
-sys.exit(app.exec())
+    #testing the database function
