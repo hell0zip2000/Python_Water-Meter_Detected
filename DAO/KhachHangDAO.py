@@ -35,10 +35,12 @@ class KhachHangDAO:
         self.cursor.execute(sql, (new_id, name, email, phone, address, today))
         self.conn.commit()
         return new_id
+    
     def delete_user(self, id):
         """Xóa user theo ID"""
         self.cursor.execute("DELETE FROM customers WHERE id = %s", (id,))
         self.conn.commit()
+        
     def update_user(self, id, name, email, phone, address, created_at):
         """Updates a customer in the database."""
         sql = "UPDATE customers SET name=%s, email=%s, phone=%s, address=%s, created_at=%s WHERE id=%s"

@@ -41,6 +41,10 @@ class NhanVienBUS:
             raise ValueError(f"Invalid role '{role}'. Must be one of {[r.value for r in Role]}")
         self.DAO.update_user(id, name, email, password, role.value, NgayDangKy)
 
+    def delete_user(self, id):
+        """Deletes a employees from the database."""
+        self.DAO.delete_user(id)
+
     def validate_login(self, email, password):
         """Validate user login"""
         return self.DAO.validate_login(email, password)

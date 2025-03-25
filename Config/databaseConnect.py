@@ -7,7 +7,7 @@ def get_conn():
         host="localhost",        # use 'localhost' for XAMPP
         user="root",             # Default XAMPP MySQL username
         password="",             # Default password
-        database="qlnuoc"        # database name
+        database="water_management"        #remember to change name when using different database
     )
     
     # Check if connection was successful

@@ -6,19 +6,29 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1102</width>
-    <height>725</height>
+    <width>1098</width>
+    <height>670</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="autoFillBackground">
+   <bool>true</bool>
+  </property>
   <property name="styleSheet">
-   <string notr="true">background-image: url('loginBG.png');
-background-repeat: no-repeat;
-background-position: center;</string>
+   <string notr="true"/>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url(&quot;C:/Users/huynh/OneDrive/Desktop/VMmanager/Python_Water-Meter_Detected/GUI/loginBG.jpg&quot;);
+background-repeat: no-repeat;
+background-position: center;
+</string>
+   </property>
    <widget class="QLineEdit" name="UserEmail">
     <property name="geometry">
      <rect>
@@ -29,7 +39,12 @@ background-position: center;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">border-radius: 10;</string>
+     <string notr="true">QLineEdit {
+    background-color: lightgray; /* Change this to any color */
+    color: black; /* Text color */
+    border: 1px solid black; /* Optional: Border styling */
+    border-radius:10;
+}</string>
     </property>
     <property name="text">
      <string/>
@@ -48,7 +63,12 @@ background-position: center;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">border-radius:10;</string>
+     <string notr="true">QLineEdit {
+    background-color: lightgray; /* Change this to any color */
+    color: black; /* Text color */
+    border: 1px solid black; /* Optional: Border styling */
+    border-radius:10;
+}</string>
     </property>
     <property name="text">
      <string/>
@@ -99,19 +119,23 @@ background-position: center;</string>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">color:white;</string>
+     <string notr="true"/>
     </property>
     <property name="text">
      <string>Đăng nhập</string>
     </property>
    </widget>
+   <zorder>UserPassword</zorder>
+   <zorder>LoginButton</zorder>
+   <zorder>label_3</zorder>
+   <zorder>UserEmail</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1102</width>
+     <width>1098</width>
      <height>22</height>
     </rect>
    </property>

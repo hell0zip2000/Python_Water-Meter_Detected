@@ -25,21 +25,28 @@ class NhanVienDAO:
             return NhanVienDTO(row[0], row[1], row[2], row[3], row[4])  # Trả về đối tượng DTO
         return None
 
-    def insert_user(self, name, email, phone, role):
+    def insert_user(self, name, email, password, role):
         """Thêm user mới"""
         self.cursor.execute("SELECT MAX(id) FROM employees")
         max_id = self.cursor.fetchone()[0]
         new_id = max_id + 1 if max_id is not None else 1
         today = datetime.today().strftime('%Y-%m-%d')
-        sql = "INSERT INTO employees (id, name, email, phone, role, created_at) VALUES (%s, %s, %s, %s, %s, %s)"
-        self.cursor.execute(sql, (new_id, name, email, phone, role, today))
+        sql = "INSERT INTO employees (id, name, email, password, role, created_at) VALUES (%s, %s, %s, %s, %s, %s)"
+        self.cursor.execute(sql, (new_id, name, email, password, role, today))
         self.conn.commit()
         return new_id
+    
+    def delete_user(self, id):
+        """Xóa user theo ID"""
+        self.cursor.execute("DELETE FROM employees WHERE id = %s", (id,))
+        self.conn.commit()
+
     def update_user(self, id, name, email, password, role, created_at):
         """Updates a employee in the database."""
         sql = "UPDATE employees SET name=%s, email=%s, password=%s, role=%s, created_at=%s WHERE id=%s"
         self.cursor.execute(sql, (name, email, password, role, created_at, id))
         self.conn.commit()
+        
     def validate_login(self, email, password):
         """Check if the provided email and password match a record in the database"""
         self.cursor.execute("SELECT password, role FROM employees WHERE email = %s", (email,))
