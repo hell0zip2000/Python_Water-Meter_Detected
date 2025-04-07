@@ -6,5 +6,4 @@ if __name__ == "__main__":  #test ground
     window = MyApp()  # Start with the login window
     window.show()
     sys.exit(app.exec())
-
     #testing the database function
