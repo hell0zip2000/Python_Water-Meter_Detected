@@ -1,18 +1,12 @@
-import sys
-from PyQt6.QtWidgets import QApplication, QStackedWidget
-from GUI.main_GUI import main_GUI  
-from GUI.Login_Gui import Login_w 
-import os
-from PyQt6 import QtWidgets  
-from PyQt6.QtWidgets import QApplication, QMainWindow, QMenuBar, QMenu, QMessageBox, QTableWidget, QTableWidgetItem, QLineEdit
-from PyQt6.QtGui import QAction
-from PyQt6 import uic
-from PyQt6.QtCore import QDate
-import sys
-from PyQt6.QtWidgets import QApplication
-from GUI.Login_Gui import Login_w  
+from Config.databaseConnect import conn
 
-app = QApplication(sys.argv)
-login_f = Login_w()
-login_f.show()  
-sys.exit(app.exec())
+def test_database_connection():
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM khachhang")
+    rows = cursor.fetchall()
+    for row in rows:
+        print(row)
+    cursor.close()
+
+if __name__ == "__main__":
+    test_database_connection()
