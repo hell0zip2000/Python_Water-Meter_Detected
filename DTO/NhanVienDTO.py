@@ -1,4 +1,4 @@
-class NhanVienDTO:
+git addclass NhanVienDTO:
     def __init__(self, maNV, hoTen, chucVu, soDienThoai, email, ngayVaoLam):
         self.maNV = maNV
         self.hoTen = hoTen

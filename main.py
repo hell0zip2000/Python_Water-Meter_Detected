@@ -1,12 +1,9 @@
-from Config.databaseConnect import conn
-
-def test_database_connection():
-    cursor = conn.cursor()
-    cursor.execute("SELECT * FROM khachhang")
-    rows = cursor.fetchall()
-    for row in rows:
-        print(row)
-    cursor.close()
-
-if __name__ == "__main__":
-    test_database_connection()
+from PyQt6.QtWidgets import QApplication
+import sys
+from GUI.ClassUI import MyApp
+if __name__ == "__main__":  #test ground
+    app = QApplication(sys.argv)
+    window = MyApp()  # Start with the login window
+    window.show()
+    sys.exit(app.exec())
+    #testing the database function
