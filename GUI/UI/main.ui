@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1099</width>
+    <height>730</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>220</y>
+      <width>431</width>
+      <height>161</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Quét Hình Ảnh</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1099</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuQu_n_l">
+    <property name="title">
+     <string>Quản lý</string>
+    </property>
+    <addaction name="separator"/>
+    <addaction name="actionKH"/>
+    <addaction name="actionNV"/>
+    <addaction name="actionHD"/>
+    <addaction name="actionQu_n_l_th_ng_b_o"/>
+    <addaction name="actionQu_n_l_ng_h_n_c"/>
+   </widget>
+   <widget class="QMenu" name="menuB_o_c_o">
+    <property name="title">
+     <string>Thống kê</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuExit">
+    <property name="title">
+     <string>Đăng Xuất</string>
+    </property>
+    <addaction name="actionExit"/>
+   </widget>
+   <addaction name="menuQu_n_l"/>
+   <addaction name="menuB_o_c_o"/>
+   <addaction name="menuExit"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionKH">
+   <property name="text">
+    <string>Khách hàng</string>
+   </property>
+  </action>
+  <action name="actionNV">
+   <property name="text">
+    <string>Nhân viên</string>
+   </property>
+  </action>
+  <action name="actionHD">
+   <property name="text">
+    <string>Hóa đơn</string>
+   </property>
+  </action>
+  <action name="actionQu_n_l_th_ng_b_o">
+   <property name="text">
+    <string>Thông báo</string>
+   </property>
+  </action>
+  <action name="actionQu_n_l_ng_h_n_c">
+   <property name="text">
+    <string>Đồng hồ nước</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="text">
+    <string>Đăng xuất</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
