@@ -4,8 +4,8 @@ import re
 class KhachHangBUS:
     def __init__(self):
         self.DAO = KhachHangDAO()
-    def get_user(self, MaKhachHang): 
-        return self.DAO.get_user(MaKhachHang)
+    def get_user(self, id): 
+        return self.DAO.get_user(id)
     def get_all(self):
         """Lấy danh sách khách hàng từ DAO"""
         return self.DAO.get_all()

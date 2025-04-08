@@ -18,6 +18,7 @@ class QuanLyNhanVien(QMainWindow):
         self.btnEdit.clicked.connect(self.update_employee)
         self.btnAdd.clicked.connect(self.add_employee)
         self.btnDel.clicked.connect(self.delete_employee)
+        self.btnReset.clicked.connect(self.reset_employee)
         self.btnKH.clicked.connect(self.open_customer_ui)
         self.btnHD.clicked.connect(self.open_reciept_ui)
         self.searchbutton.clicked.connect(self.search_employee)
@@ -34,7 +35,12 @@ class QuanLyNhanVien(QMainWindow):
             self.List.setItem(row_index, 3, QTableWidgetItem(employee.password))
             self.List.setItem(row_index, 4, QTableWidgetItem(employee.role.value))  # Convert Enum to string before setting
             self.List.setItem(row_index, 5, QTableWidgetItem(str(employee.created_at)))
-
+    def reset_employee(self):
+        self.maNV.clear()
+        self.tenNV.clear()
+        self.email.clear()
+        self.password.clear()
+        self.dateDK.clear()
     def fill_fields(self, row, column):
         """Fill input fields when a row is selected."""
         self.maNV.setText(self.List.item(row, 0).text())
@@ -65,7 +71,7 @@ class QuanLyNhanVien(QMainWindow):
             QMessageBox.information(self, "Thành công", f"Đã thêm nhân viên mới với ID: {new_id}")
             self.load_data()  # Refresh table
         except Exception as e:
-            QMessageBox.critical(self, "Lỗi", f"Lỗi khi thêm nhân viên: {str(e)}")
+            QMessageBox.critical(self, "Lỗi", f"{str(e)}")
 
     def update_employee(self):
         """Update employee data in the database."""
@@ -75,18 +81,10 @@ class QuanLyNhanVien(QMainWindow):
         password = self.password.text().strip()
         role = self.role.currentText().strip() 
         dateDK = self.dateDK.text().strip()
-        try:
-            dateDK = datetime.strptime(dateDK, "%d-%b-%y").strftime("%Y-%m-%d")
-        except ValueError:
-            QMessageBox.warning(self, "Lỗi", "Ngày đăng ký không hợp lệ!")
-            return
-
-        if not MaNV or not name or not email or not password or not role or not dateDK:
-            QMessageBox.warning(self, "Lỗi", "Vui lòng điền đầy đủ thông tin khách hàng!")
-            return
-
+        
         self.NhanVienBUS.update_user(MaNV, name, email, password, role, dateDK) 
         QMessageBox.information(self, "Thành công", "Thông tin nhân viên đã được cập nhật!")
+        print(dateDK)
         self.load_data()
 
     def delete_employee(self):

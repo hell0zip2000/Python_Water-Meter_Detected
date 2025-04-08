@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1119</width>
-    <height>855</height>
+    <height>691</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -409,14 +409,19 @@
        <height>31</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
      <item>
       <property name="text">
-       <string>ADMIN</string>
+       <string>STAFF</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>STAFF</string>
+       <string>ADMIN</string>
       </property>
      </item>
     </widget>
@@ -479,7 +484,7 @@
      <x>0</x>
      <y>0</y>
      <width>1119</width>
-     <height>22</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>
