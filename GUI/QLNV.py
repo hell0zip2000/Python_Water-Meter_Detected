@@ -119,7 +119,7 @@ class QuanLyNhanVien(QMainWindow):
             self.List.setItem(row_index, 1, QTableWidgetItem(employee.name))
             self.List.setItem(row_index, 2, QTableWidgetItem(employee.email))
             self.List.setItem(row_index, 3, QTableWidgetItem(employee.password))
-            self.List.setItem(row_index, 4, QTableWidgetItem(employee.role)) 
+            self.List.setItem(row_index, 4, QTableWidgetItem(employee.role.value)) 
             self.List.setItem(row_index, 5, QTableWidgetItem(str(employee.created_at)))
     def open_customer_ui(self):
         from GUI.QLKH import QuanLyKhachHang
